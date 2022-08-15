@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+    
+    <title>
+        Sync&#x2F;Async Logging
+    </title>
+    
+
+    
+    
+
+    
+    
+        <link href=https://gitrus.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="" href="https://gitrus.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" type="text/css" href="https://gitrus.github.io/theme/light.css"/>
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href=https://gitrus.github.io/main.css />
+
+
+    
+</head>
+
+<body>
+    <div class="content">
+        <header>
+    <div class="main">
+        <a href=https:&#x2F;&#x2F;gitrus.github.io></a>
+    </div>
+
+    <nav>
+        
+            <a href=&#x2F;posts style="margin-left: 0.7em">&#x2F;posts</a>
+        
+    </nav>
+</header>
+
+        
+        
+    
+<main>
+    <article>
+        <div class="title">
+            
+            
+    <div class="page-header">
+        Sync&#x2F;Async Logging<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+            
+                <div class="meta">
+                    Posted on 2022-08-14
+
+                    
+                </div>
+            
+        </div>
+
+        
+
+        
+        
+
+        <section class="body">
+            <h2 id="poniatie-logging">Понятие logging</h2>
+<p>В этой заметке log - текст, который передается в стандартные потоки вывода процесса: <code>stdout/stderr</code>
+Запись может быть fromat-ированной и в виде <code>json</code> (мета). 
+В микросервисном мире с kubernetes, из-за невозможности попасть на все поды разом, log-и используются как инструмент общения с кодом.</p>
+<h2 id="async-logging">Async logging?</h2>
+<p>Запись в <code>stdout</code> == блокирующая запись в <code>pipe</code>, то есть в буффер на стороне Kernel-а.
+Поэтому есть библиотеки, которые позволяют писать логи без блокировки. То есть между вызовом метода <code>log</code> и попаданием текста в <code>std*</code> есть программный буффер, 
+который лишь раз в <code>х</code> секунд флашится (flush=запись + очистка) в <code>std*</code>. Это уменьшает latancy из-за более редкого вызова sys-call-а. </p>
+<p>Буффер дает пойти ещё дальше: семплировать логи по ключам. То есть отбрасывать похожие логи, для того чтобы не записывать одинаковые строки.</p>
+<h2 id="zachem-nuzhen-logging">Зачем нужен logging?</h2>
+<p>Для того, чтобы понять возможность использования подобных библиотек, вернемся к тому для чего используются логи:</p>
+<ul>
+<li>для дебага или отложенного дебага. Для этого нам важно построить трейс того, что происходило в коде до ошибки и залогировать саму ошибку.
+Но если при этом происходит краш, то при использовании асинхронных логов буффер логов не флешнется, потому что код уже упал.
+Получаем ситуацию, в которой проблема прозошла, а логов о проблеме нет. Поэтому дебаг-логи и ошибки должны быть синхронным, как пример <code>sentry</code></li>
+<li>для проверки факта запуска или результатов запуска. То есть: посмотреть пользуются ли ручкой и какие параметры передают. Или отработала ли cron-джоба. Здесь логер мог бы быть асинхронным.
+Но с другой стороны зачем здесь логер? Кажется, гораздо больше для этой задачи подходят метрики.
+Логер будет подходить, только если нужны параметры. Здесь выбор сводится к необходимой точности: можем ли мы потерять часть параметров или семплировать их.</li>
+<li>как мусорка. Это самое частое использование логов. В этом сценарии не ясно зачем вообще что-то логировать.</li>
+</ul>
+<h2 id="itogo">Итого</h2>
+<p>Там где логи нужны, там часто важна синхронность записи, чтобы эти записи не потерять. А там где нет -- в целом без разницы.</p>
+
+        </section>
+
+        
+
+    </article>
+</main>
+
+
+    </div>
+</body>
+
+</html>
