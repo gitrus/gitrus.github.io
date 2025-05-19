@@ -18,4 +18,5 @@ highlight_code = true
 # some
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
+    { name = "/middle_related", url = "/middle-related", weight = 1}
 ]
