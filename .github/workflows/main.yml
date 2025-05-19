@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,11 +21,14 @@ jobs:
     steps:
       - name: checkout main
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Build and deploy
         uses: shalzz/zola-deploy-action@master
+        with:
+          persist-credentials: false
         env:
           # Target branch
           PAGES_BRANCH: gh-pages
           # Provide personal access token
-          TOKEN: ${{ secrets.TOKEN }}
-
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,10 @@
 +++
 title = "JWT"
-slug = "jwt"
+date = "2025-01-01"
+
+[taxonomies]
+tags = ["auth", "middle_python"]
+
 +++
 
 JWT standart:

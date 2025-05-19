@@ -1,6 +1,7 @@
 +++
 title = "Posts"
-template = "posts.html"
-transparent = true
 sort_by = "date"
+
+paginate_by = 9
+insert_anchor_links = "heading"
 +++
