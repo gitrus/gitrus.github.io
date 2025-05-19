@@ -18,5 +18,17 @@ highlight_code = true
 # some
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
-    { name = "/middle_related", url = "/middle-related", weight = 1}
+    { name = "/middle_related", url = "/middle-related", weight = 2}
 ]
+
+fancy_code = true
+dynamic_note = true 
+
+theme = "toggle"
+
+socials = [
+  { name = "github", url = "https://github.com/gitrus/", icon = "github" },
+]
+
+[extra.analytics]
+enabled = false

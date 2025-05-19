@@ -1,6 +1,6 @@
 +++
 title = "AuthN / AuthZ / IAM"
+template = "posts.html"
+transparent = true
+sort_by = "date"
 +++
-Topics related to auth* and IAM.
-
-[#JWT popular issues] (@/middle_related/auth/jwt.md)
