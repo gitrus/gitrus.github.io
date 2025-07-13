@@ -1,5 +1,6 @@
 # The URL the site will be built for
 base_url = "https://gitrus.github.io"
+title = "gitrus pages"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -19,7 +20,6 @@ highlight_code = true
 # some
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
-    { name = "/middle_related", url = "/middle-related", weight = 2 },
 ]
 
 fancy_code = true
