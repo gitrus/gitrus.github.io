@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="dark light">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https:&#x2F;&#x2F;gitrus.github.io">
+
+    
+
+    
+    
+    
+        <title>
+            
+                Sync&#x2F;Async Logging
+            
+        </title>
+
+        
+            <meta property="og:title"
+                  content="Sync&#x2F;Async Logging" />
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+    
+
+    
+    
+        <link href=https://gitrus.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+    
+    
+
+    
+    <script defer src=https://gitrus.github.io/js/codeblock.js></script>
+
+    
+    
+
+    
+    
+        <script src=https://gitrus.github.io/js/note.js></script>
+    
+
+    
+
+    
+    
+
+
+    
+    
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://gitrus.github.io/theme/light.css" />
+        <link id="darkModeStyle"
+              rel="stylesheet"
+              type="text/css"
+              href="https://gitrus.github.io/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+
+    
+        <script src=https://gitrus.github.io/js/themetoggle.js></script>
+
+        
+            <script>setTheme(getSavedTheme());</script>
+        
+    
+
+
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="https://gitrus.github.io/main.css" />
+
+    
+
+    <script defer
+                    src="https://gitrus.github.io/search_index.en.js?h=4aad0bc0f98fe82814f8"></script>
+        <script defer
+                src="https://gitrus.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script></head>
+
+
+    <body>
+        <div class="left-content">
+            
+            
+        </div>
+
+        <div class="content">
+            <nav>
+    <div class="left-nav">
+        
+            <a href=https:&#x2F;&#x2F;gitrus.github.io>gitrus pages</a>
+        
+
+
+        <div class="socials">
+            
+                <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;gitrus&#x2F;" class="social">
+                    <img alt="github" src="https://gitrus.github.io/icons/social/github.svg">
+                </a>
+            
+        </div>
+    </div>
+
+    <div class="right-nav">
+        
+            <a href=https://gitrus.github.io/posts style="margin-right: 0.5em">&#x2F;posts</a>
+        
+
+        
+            <button id="search-button"
+                    class="search-button"
+                    title="$SHORTCUT to open search">
+                <img src="https://gitrus.github.io/icons/search.svg"
+                    alt="Search"
+                    class="search-icon">
+            </button>
+
+            <div id="searchModal"
+                class="search-modal js"
+                role="dialog"
+                aria-labelledby="modalTitle">
+                <div id="modal-content">
+                    <h1 id="modalTitle" class="page-header">Search</h1>
+                    <div id="searchBar">
+                        <input id="searchInput"
+                            role="combobox"
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-expanded="false"
+                            aria-controls="results-container"
+                            placeholder="Search..." />
+                        <button id="clear-search" class="clear-button" title="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="results-container">
+                        <div id="results-info">
+                            <span id="zero_results" style="display: none;">No results</span>
+                            <span id="one_result" style="display: none;">1 result</span>
+                            <span id="many_results" style="display: none;">$NUMBER results</span>
+                        </div>
+                        <div id="results" role="listbox"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <a id="dark-mode-toggle"
+            onclick="toggleTheme(); event.preventDefault();"
+            href="#">
+                <img src="https://gitrus.github.io/icons/sun.svg"
+                    id="sun-icon"
+                    style="filter: invert(1)"
+                    alt="Light" />
+                <img src=https://gitrus.github.io/icons/moon.svg id="moon-icon" alt="Dark" />
+            </a>
+
+            <!-- Initialize the theme toggle icons -->
+            <script>updateItemToggleTheme()</script>
+        
+    </div>
+</nav>
+
+
+            
+            
+    
+<div class="visible-element-observer-root" data-selector="main article p">
+    <main>
+        <article>
+            <div class="title">
+                
+                
+    
+    <div class="page-header">
+        Sync&#x2F;Async Logging
+    </div>
+    
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2022-08-14</time>
+                    
+
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                        <span class="tags-label"> :: </span>
+                        <span class="tags">
+                                <a href="https://gitrus.github.io/tags/logging/"
+                                   class="post-tag">logging</a>
+                            
+                        </span>
+                    
+
+                    
+
+                </div>
+            </div>
+
+            
+
+            <section class="body">
+                <h2 id="poniatie-logging"><a class="zola-anchor" href="#poniatie-logging" aria-label="Anchor link for: poniatie-logging">Понятие logging</a></h2>
+<p>В этой заметке log - текст, который передается в стандартные потоки вывода процесса: <code>stdout/stderr</code>
+Запись может быть fromat-ированной и в виде <code>json</code> (мета).
+В микросервисном мире мы скейлим наше приложение горизонтально, и так как трудно попасть на все поды разом, log-и используются как инструмент обратной связи от кода.</p>
+<h2 id="async-logging"><a class="zola-anchor" href="#async-logging" aria-label="Anchor link for: async-logging">Async logging?</a></h2>
+<p>Запись в <code>stdout</code> == блокирующая запись в <code>fd</code>, то есть в буффер на стороне Kernel-а.
+Поэтому есть библиотеки, которые позволяют писать логи без блокировки. То есть между вызовом метода <code>log</code> и попаданием текста в <code>std*</code> есть программный буффер,
+который лишь раз в <code>х</code> секунд флашится (flush=запись + очистка) в <code>std*</code>. Это уменьшает latancy из-за более редкого вызова <a href="https://man7.org/linux/man-pages/man2/write.2.html">sys-call-а</a>.</p>
+<p>Программный буффер дает ещё одно преимущество: семплировать логи по ключам. То есть отбрасывать похожие логи, для того чтобы не записывать одинаковые строки.
+В буфере это сделать проще, хотя можно это делать и в обычном потоковом логгировании.</p>
+<h2 id="zachem-nuzhen-logging"><a class="zola-anchor" href="#zachem-nuzhen-logging" aria-label="Anchor link for: zachem-nuzhen-logging">Зачем нужен logging?</a></h2>
+<p>Для того чтобы понять возможность использования подобных библиотек, вернемся к тому для чего используются логи:</p>
+<ul>
+<li>для дебага или возможности отложенного дебага. Для этого нам важно построить трейс того, что происходило в коде до ошибки и залогировать саму ошибку.
+Но если при этом происходит краш, то при использовании асинхронных логов буффер логов не флешнется, потому что код уже упал.
+Получаем ситуацию, в которой проблема прозошла, а логов о проблеме нет. Поэтому дебаг-логи и ошибки должны быть синхронным, как пример деволтные настройки <code>sentry</code>;</li>
+<li>для проверки факта запуска или результатов запуска. То есть: посмотреть пользуются ли HTTP-handler-ом и какие параметры передают.
+Или отработала ли cron-джоба. Здесь логер мог бы быть асинхронным.
+Но такие логи можно заменить на что-то другое. Гораздо больше для этой задачи подходят метрики.
+Логер будет подходить, только если нужны параметры. Здесь выбор сводится к необходимой точности: можем ли мы потерять часть параметров или их точность;</li>
+<li>как мусорка. Это самое частое, что я вижу при использовании логов. В этом сценарии не ясно зачем вообще что-то логировать.</li>
+</ul>
+<h2 id="itogo"><a class="zola-anchor" href="#itogo" aria-label="Anchor link for: itogo">Итого</a></h2>
+<p>Там где логи нужны, нам важна синхронность записи, чтобы эти записи не потерять. Но если вы их используете в качестве замены метрикам, то асинхронный логер вам подойдет.</p>
+
+            </section>
+        </article>
+    </main>
+</div>
+
+
+
+            
+                
+            
+
+            
+        </div>
+
+        <div class="right-content">
+            
+    
+    
+
+        </div>
+    </body>
+
+</html>

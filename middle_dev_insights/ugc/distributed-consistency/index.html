@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="dark light">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https:&#x2F;&#x2F;gitrus.github.io">
+
+    
+
+    
+    
+    
+        <title>
+            
+                One handler and two storages
+            
+        </title>
+
+        
+            <meta property="og:title"
+                  content="One handler and two storages" />
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+    
+
+    
+    
+        <link href=https://gitrus.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+    
+    
+
+    
+    <script defer src=https://gitrus.github.io/js/codeblock.js></script>
+
+    
+    
+
+    
+    
+        <script src=https://gitrus.github.io/js/note.js></script>
+    
+
+    
+
+    
+    
+
+
+    
+    
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://gitrus.github.io/theme/light.css" />
+        <link id="darkModeStyle"
+              rel="stylesheet"
+              type="text/css"
+              href="https://gitrus.github.io/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+
+    
+        <script src=https://gitrus.github.io/js/themetoggle.js></script>
+
+        
+            <script>setTheme(getSavedTheme());</script>
+        
+    
+
+
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="https://gitrus.github.io/main.css" />
+
+    
+
+    <script defer
+                    src="https://gitrus.github.io/search_index.en.js?h=4aad0bc0f98fe82814f8"></script>
+        <script defer
+                src="https://gitrus.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script></head>
+
+
+    <body>
+        <div class="left-content">
+            
+            
+        </div>
+
+        <div class="content">
+            <nav>
+    <div class="left-nav">
+        
+            <a href=https:&#x2F;&#x2F;gitrus.github.io>gitrus pages</a>
+        
+
+
+        <div class="socials">
+            
+                <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;gitrus&#x2F;" class="social">
+                    <img alt="github" src="https://gitrus.github.io/icons/social/github.svg">
+                </a>
+            
+        </div>
+    </div>
+
+    <div class="right-nav">
+        
+            <a href=https://gitrus.github.io/posts style="margin-right: 0.5em">&#x2F;posts</a>
+        
+
+        
+            <button id="search-button"
+                    class="search-button"
+                    title="$SHORTCUT to open search">
+                <img src="https://gitrus.github.io/icons/search.svg"
+                    alt="Search"
+                    class="search-icon">
+            </button>
+
+            <div id="searchModal"
+                class="search-modal js"
+                role="dialog"
+                aria-labelledby="modalTitle">
+                <div id="modal-content">
+                    <h1 id="modalTitle" class="page-header">Search</h1>
+                    <div id="searchBar">
+                        <input id="searchInput"
+                            role="combobox"
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-expanded="false"
+                            aria-controls="results-container"
+                            placeholder="Search..." />
+                        <button id="clear-search" class="clear-button" title="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="results-container">
+                        <div id="results-info">
+                            <span id="zero_results" style="display: none;">No results</span>
+                            <span id="one_result" style="display: none;">1 result</span>
+                            <span id="many_results" style="display: none;">$NUMBER results</span>
+                        </div>
+                        <div id="results" role="listbox"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <a id="dark-mode-toggle"
+            onclick="toggleTheme(); event.preventDefault();"
+            href="#">
+                <img src="https://gitrus.github.io/icons/sun.svg"
+                    id="sun-icon"
+                    style="filter: invert(1)"
+                    alt="Light" />
+                <img src=https://gitrus.github.io/icons/moon.svg id="moon-icon" alt="Dark" />
+            </a>
+
+            <!-- Initialize the theme toggle icons -->
+            <script>updateItemToggleTheme()</script>
+        
+    </div>
+</nav>
+
+
+            
+            
+    
+<div class="visible-element-observer-root" data-selector="main article p">
+    <main>
+        <article>
+            <div class="title">
+                
+                
+    
+    <div class="page-header">
+        One handler and two storages
+    </div>
+    
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2025-01-01</time>
+                    
+
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                        <span class="tags-label"> :: </span>
+                        <span class="tags">
+                                <a href="https://gitrus.github.io/tags/ugc/"
+                                   class="post-tag">ugc</a>
+                            
+                                <a href="https://gitrus.github.io/tags/middle-python/"
+                                   class="post-tag">middle_python</a>
+                            
+                        </span>
+                    
+
+                    
+
+                </div>
+            </div>
+
+            
+
+            <section class="body">
+                <blockquote>
+<p><em>Disclaimer:</em>
+This post is a starting point. Each pattern has trade-offs and operational details.</p>
+<p>Before choosing one, research <a href="https://microservices.io/">microservices.io</a></p>
+</blockquote>
+<p>The UGC module brings up a classic distributed transaction issue:
+<code>can we safely write to two databases from one handler?</code></p>
+<p>The answer is no.
+Writing to multiple databases from a single handler almost always leads to data inconsistencies and hard-to-debug failures.</p>
+<p>Instead, use one of these patterns to ensure consistency:</p>
+<ul>
+<li>Transactional Outbox:
+Write changes only to the master database and, in the same transaction, record an event in an outbox table. A background worker reads from the outbox-table and updates secondary storages.</li>
+</ul>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">handler</span><span>(</span><span style="color:#bf616a;">data</span><span>):
+</span><span>    </span><span style="color:#b48ead;">with </span><span style="color:#bf616a;">transaction</span><span>():
+</span><span>        </span><span style="color:#bf616a;">save_to_main_db</span><span>(data)
+</span><span>        </span><span style="color:#bf616a;">save_to_outbox</span><span>({&#39;</span><span style="color:#a3be8c;">event</span><span>&#39;: &#39;</span><span style="color:#a3be8c;">created</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">data</span><span>&#39;: data})
+</span></code></pre>
+<ul>
+<li>Event Sourcing:
+Store every change as an event in an event log. Rebuild the current state of each storage by replaying these events. All storages receive updates from the same event stream, so you avoid direct double writes.</li>
+</ul>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">handler</span><span>(</span><span style="color:#bf616a;">data</span><span>):
+</span><span>    </span><span style="color:#bf616a;">push_event</span><span>({&#39;</span><span style="color:#a3be8c;">event</span><span>&#39;: &#39;</span><span style="color:#a3be8c;">created</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">data</span><span>&#39;: data})
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">consumer_ugc</span><span>(</span><span style="color:#bf616a;">event</span><span>):
+</span><span>    </span><span style="color:#b48ead;">if </span><span>event[&#39;</span><span style="color:#a3be8c;">type</span><span>&#39;] == &#39;</span><span style="color:#a3be8c;">created</span><span>&#39;:
+</span><span>        </span><span style="color:#bf616a;">create_ugc_entity</span><span>(event[&#39;</span><span style="color:#a3be8c;">data</span><span>&#39;])
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">consumer_analytics</span><span>(</span><span style="color:#bf616a;">event</span><span>):
+</span><span>    </span><span style="color:#b48ead;">if </span><span>event[&#39;</span><span style="color:#a3be8c;">type</span><span>&#39;] == &#39;</span><span style="color:#a3be8c;">created</span><span>&#39;:
+</span><span>        </span><span style="color:#bf616a;">create_analytic_log</span><span>(event[&#39;</span><span style="color:#a3be8c;">data</span><span>&#39;])
+</span></code></pre>
+<ul>
+<li>Change Data Capture (CDC):
+Track changes in the master database using CDC tools (like Debezium). As changes happen, capture them and propagate updates to other storages asynchronously.</li>
+</ul>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">handler</span><span>(</span><span style="color:#bf616a;">data</span><span>):
+</span><span>    </span><span style="color:#bf616a;">save_to_main_db</span><span>(data)
+</span><span>
+</span><span style="color:#65737e;"># APP -&gt; DB -&gt; CDC -&gt; DB2
+</span></code></pre>
+<p><img src="/middle_dev_insights/ugc/ugc-scetch.gif" alt="Distributed fail" title="Distributed Fail" /></p>
+<h3 id="how-to-act"><a class="zola-anchor" href="#how-to-act" aria-label="Anchor link for: how-to-act">How to act:</a></h3>
+<p>Pick a single source of truth (the master). Use an event-based approach—Transactional Outbox, Event Sourcing, or CDC—to propagate changes. All three avoid direct double writes, reducing the risk of data loss. . All writes are recoverable.</p>
+
+            </section>
+        </article>
+    </main>
+</div>
+
+
+
+            
+                
+            
+
+            
+        </div>
+
+        <div class="right-content">
+            
+    
+    
+
+        </div>
+    </body>
+
+</html>
