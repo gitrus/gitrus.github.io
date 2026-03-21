@@ -54,7 +54,7 @@ def handler(data):
 # APP -> DB -> CDC -> DB2
 ```
 
-![Distributed fail](/middle_dev_insights/ugc/ugc-scetch.gif "Distributed Fail")
+![Distributed fail](/middle-dev/ugc/ugc-scetch.gif "Distributed Fail")
 
 ### How to act:
 Pick a single source of truth (the master). Use an event-based approach—Transactional Outbox, Event Sourcing, or CDC—to propagate changes. All three avoid direct double writes, reducing the risk of data loss. . All writes are recoverable.
