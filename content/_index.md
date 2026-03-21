@@ -1,3 +1,3 @@
 +++
-redirect_to = "posts"
+redirect_to = "/blog/"
 +++
